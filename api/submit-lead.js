@@ -52,6 +52,18 @@ module.exports = async function handler(req, res) {
       return res.status(502).json({ error: 'Error al guardar en Notion' });
     }
 
+    // Llamar al webhook de Make para enviar el email de bienvenida
+    try {
+      await fetch('https://hook.us2.make.com/zyp3c379omqerahhxsmqj02z0rbb5myb', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, email, whatsapp, profesion, objetivo })
+      });
+    } catch (webhookErr) {
+      // No bloqueamos la respuesta si el webhook falla
+      console.error('Make webhook error:', webhookErr);
+    }
+
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error(err);

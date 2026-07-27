@@ -13,7 +13,7 @@
 const HOTMART_TOKEN    = process.env.HOTMART_TOKEN;
 const RESEND_API_KEY   = process.env.RESEND_API_KEY;
 const NOTION_TOKEN     = process.env.NOTION_TOKEN;
-const NOTION_DB        = process.env.NOTION_STUDENTS_DB;
+const NOTION_DB        = '223b614a-5f2d-4617-b76a-e8ce843148bb'; // Registros - AI Workshop Miami
 const FROM_EMAIL       = 'Learn5 <contacto@learn5.tech>';
 const COURSE_URL       = 'https://app.hotmart.com/membership/ia-en-30-dias-miami/home';
 const WA_URL           = 'https://wa.me/17865271196';
@@ -104,35 +104,23 @@ async function saveToNotion(data) {
       body: JSON.stringify({
         parent: { database_id: NOTION_DB },
         properties: {
-          // Title field (must match your DB column name exactly)
-          'Nombre': {
+                    // Column names match "Registros - AI Workshop Miami (Learn5)" exactly
+          'Nombre completo': {
             title: [{ text: { content: data.name } }],
           },
           'Email': {
             email: data.email,
           },
-          'Teléfono': {
+          'WhatsApp': {
             phone_number: data.phone || null,
           },
-          'Transacción Hotmart': {
-            rich_text: [{ text: { content: data.transaction } }],
+          'Estado de pago': {
+            select: { name: 'Pagado' },
           },
-          'Precio Pagado': {
-            number: data.pricePaid,
-          },
-          'Moneda': {
-            select: { name: data.currency },
-          },
-          'Fecha de Compra': {
-            date: { start: data.purchaseDate },
-          },
-          'Estado': {
-            select: { name: 'Inscrito' },
-          },
-          'Oferta': {
-            rich_text: [{ text: { content: data.offer } }],
-          },
-        },
+          // "Fecha de registro" is created_time — set automatically by Notion
+          'Objetivo con IA': {
+            rich_text: [{ text: { content: 'Hotmart · TX: ' + data.transaction + ' · $' + data.pricePaid + ' ' + data.currency } }],
+          },},
       }),
     });
 

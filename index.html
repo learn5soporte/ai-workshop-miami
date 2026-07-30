@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IA en 30 Días — Miami Edition | Learn5</title>
-<meta name="description" content="30 herramientas de IA en 30 días. 4 sesiones virtuales en vivo + campus online disponible 24/7. Para emprendedores, freelancers y dueños de negocio en cualquier parte del mundo.">
-<meta property="og:title" content="IA en 30 Días — Miami Edition · Learn5">
-<meta property="og:description" content="30 herramientas. 4 sesiones virtuales en vivo. Campus online 24/7. 30 días que cambian cómo trabajas.">
+<title>IA en 30 DÃ­as â Miami Edition | Learn5</title>
+<meta name="description" content="30 herramientas de IA en 30 dÃ­as. 4 sesiones virtuales en vivo + campus online disponible 24/7. Para emprendedores, freelancers y dueÃ±os de negocio en cualquier parte del mundo.">
+<meta property="og:title" content="IA en 30 DÃ­as â Miami Edition Â· Learn5">
+<meta property="og:description" content="30 herramientas. 4 sesiones virtuales en vivo. Campus online 24/7. 30 dÃ­as que cambian cÃ³mo trabajas.">
 <meta property="og:image" content="https://ai-workshop-miami.vercel.app/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -230,6 +230,38 @@
 
   .hidden{display:none !important;}
 
+  /* PRE-LAUNCH BANNER */
+  .prelanzamiento-bar{
+    background:linear-gradient(90deg,#7c3aed,#0891b2);
+    color:#fff;text-align:center;padding:11px 16px;
+    font-size:13.5px;font-weight:700;position:relative;z-index:200;
+    letter-spacing:0.01em;
+  }
+  .prelanzamiento-bar .pill{
+    display:inline-block;background:rgba(255,255,255,0.2);
+    border-radius:999px;padding:2px 10px;font-size:11px;
+    text-transform:uppercase;letter-spacing:0.1em;margin-right:8px;
+  }
+
+  /* ACTIVATION COUNTER */
+  .activation-counter{
+    background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.35);
+    border-radius:14px;padding:18px 20px;margin:20px 0 4px;text-align:center;
+  }
+  .activation-title{font-size:15px;font-weight:800;margin-bottom:10px;}
+  .activation-bar-wrap{background:rgba(255,255,255,0.08);border-radius:999px;height:10px;margin:0 0 10px;overflow:hidden;}
+  .activation-bar{background:linear-gradient(90deg,#a855f7,#22d3ee);border-radius:999px;height:10px;transition:width 1.2s ease;}
+  .activation-label{font-size:12.5px;color:var(--muted);}
+  .activation-label b{color:var(--cyan-2);}
+  .start-date-tag{
+    display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+    background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);
+    border-radius:999px;padding:5px 14px;font-size:12px;font-weight:700;color:var(--cyan-2);
+  }
+
+  /* PRICE PRESALE */
+  .price-savings{font-size:13px;color:#4ade80;font-weight:700;margin-top:6px;}
+
   /* WHATSAPP */
   .whatsapp-float{position:fixed;bottom:22px;right:22px;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 0 0 rgba(37,211,102,.6);z-index:999;animation:waPulse 2.4s infinite;transition:transform .2s ease;}
   .whatsapp-float:hover{transform:scale(1.08);}
@@ -253,6 +285,13 @@
 </head>
 <body>
 
+<!-- PRE-LAUNCH ANNOUNCEMENT BAR -->
+<div class="prelanzamiento-bar">
+  <span class="pill">ð Pre-lanzamiento</span>
+  <b>Early Bird $97</b> (precio regular $197) Â· Se activa con <b>25 participantes</b> Â· Inicio: <b>18 de agosto, 2026</b>
+  &nbsp;Â·&nbsp; <a href="https://hotmart.com/es/club/learn5/products" target="_blank" rel="noopener" style="color:#aef0ff;text-decoration:underline;">Asegura tu cupo â</a>
+</div>
+
 <nav class="nav">
   <div class="nav-inner">
     <div class="logo">LEARN<span>5</span></div>
@@ -273,29 +312,29 @@
 
   <div class="container hero-grid">
     <div class="hero-copy">
-      <div class="eyebrow">Learn5 presenta · Miami Edition</div>
-      <h1>IA EN<span class="line2 gradient-text">30 DÍAS</span></h1>
-      <p class="subhead">1 herramienta de IA por día.<br><b>4 sesiones virtuales en vivo + campus online disponible 24/7.</b></p>
+      <div class="eyebrow">Learn5 presenta Â· Miami Edition</div>
+      <h1>IA EN<span class="line2 gradient-text">30 DÃAS</span></h1>
+      <p class="subhead">1 herramienta de IA por dÃ­a.<br><b>4 sesiones virtuales en vivo + campus online disponible 24/7.</b></p>
 
       <div class="tools-preview">
         <div class="tools-label">Lo que vas a aprender semana a semana</div>
         <div class="tool-tags">
-          <span class="tool-tag tag-c">Semana 1 · Fundamentos: ChatGPT, Claude, Gemini</span>
-          <span class="tool-tag tag-v">Semana 2 · Contenido: Canva AI, Leonardo, ElevenLabs</span>
-          <span class="tool-tag tag-c">Semana 3 · Automatización: Make, Zapier, n8n</span>
-          <span class="tool-tag tag-v">Semana 4 · Agentes IA: Custom GPTs, Dify, Voiceflow</span>
-          <span class="tool-tag tag-c">30 herramientas · 4 sesiones virtuales en vivo · Certificado</span>
+          <span class="tool-tag tag-c">Semana 1 Â· Fundamentos: ChatGPT, Claude, Gemini</span>
+          <span class="tool-tag tag-v">Semana 2 Â· Contenido: Canva AI, Leonardo, ElevenLabs</span>
+          <span class="tool-tag tag-c">Semana 3 Â· AutomatizaciÃ³n: Make, Zapier, n8n</span>
+          <span class="tool-tag tag-v">Semana 4 Â· Agentes IA: Custom GPTs, Dify, Voiceflow</span>
+          <span class="tool-tag tag-c">30 herramientas Â· 4 sesiones virtuales en vivo Â· Certificado</span>
         </div>
       </div>
 
       <div class="badge-row">
         <div class="badge">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          <div><b>Virtual</b>En vivo por Zoom · 1.5 h/sesión</div>
+          <div><b>Virtual</b>En vivo por Zoom Â· 1.5 h/sesiÃ³n</div>
         </div>
         <div class="badge">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <div><b>30 días · 4 sesiones</b>Cupos limitados</div>
+          <div><b>30 dÃ­as Â· 4 sesiones</b>Cupos limitados</div>
         </div>
       </div>
     </div>
@@ -305,29 +344,35 @@
         <div class="ai-ring ring-2"></div>
         <div class="ai-ring ring-1"></div>
         <div class="ai-core"></div>
-        <div class="ai-chip chip-1">🧠 30 herramientas reales</div>
-        <div class="ai-chip chip-2">🚀 4 sesiones en vivo</div>
-        <div class="ai-chip chip-3">🔥 Cupos limitados</div>
+        <div class="ai-chip chip-1">ð§  30 herramientas reales</div>
+        <div class="ai-chip chip-2">ð 4 sesiones en vivo</div>
+        <div class="ai-chip chip-3">ð¥ Cupos limitados</div>
       </div>
       <div class="cta-hero-card">
-        <div class="cohorte-badge">🔥 Primera cohorte — cupos limitados</div>
-        <h3>Reserva tu lugar ahora</h3>
-        <p class="card-sub">Virtual · 100% en línea · Desde cualquier lugar</p>
+        <div class="cohorte-badge">ð Pre-lanzamiento Â· Early Bird</div>
+        <h3>Asegura tu cupo al precio mÃ¡s bajo</h3>
+        <p class="card-sub" style="color:#a855f7;font-weight:700;">â¡ Se activa con 25 participantes Â· Inicio: 18 de agosto</p>
+        <div style="text-align:center;margin:12px 0 4px;">
+          <span style="text-decoration:line-through;color:var(--muted);font-size:13px;">$197</span>
+          &nbsp;
+          <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:28px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$97</span>
+          <span style="font-size:12px;color:#4ade80;font-weight:700;margin-left:4px;">51% OFF</span>
+        </div>
         <ul class="card-perks">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> 4 sesiones virtuales en vivo por Zoom (1.5 h)</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Campus online 24/7 por 30 días</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> 30 herramientas reales · 1 por día</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Certificado oficial de finalización</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Campus online 24/7 por 30 dÃ­as</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> 30 herramientas reales Â· 1 por dÃ­a</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Certificado oficial de finalizaciÃ³n</li>
         </ul>
         <a href="https://hotmart.com/es/club/learn5/products" target="_blank" rel="noopener" class="hotmart-btn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Inscríbete ahora en Hotmart
+          InscrÃ­bete al precio early bird â $97
         </a>
         <a href="https://wa.me/17865271196?text=Hola%2C%20quiero%20m%C3%A1s%20info%20del%20programa%20IA%20en%2030%20D%C3%ADas%20Miami" target="_blank" rel="noopener" class="wa-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.33A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.29 1.21-1.78 1.28-.45.07-1.02.1-1.65-.1-.38-.12-.87-.28-1.5-.55-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.08-1.44-1.08-2.74 0-1.3.68-1.94.92-2.2.24-.27.53-.33.7-.33h.5c.16 0 .38-.06.59.45l.8 1.96c.07.13.11.29.02.46-.42.84-.87 1.07-1.18 1.38-.13.13-.27.27-.11.55.7 1.23 1.45 1.97 2.5 2.6.94.55 1.42.78 1.7.6.21-.14.6-.5.86-.85.26-.34.46-.36.7-.27.24.09 1.52.72 1.78.85.27.13.45.2.51.31.07.12.07.67-.15 1.3z"/></svg>
-          ¿Dudas? Escríbenos por WhatsApp
+          Â¿Dudas? EscrÃ­benos por WhatsApp
         </a>
-        <p class="card-note">Pago seguro vía Hotmart · Tarjeta, PayPal y más métodos</p>
+        <p class="card-note">Pago seguro viÃ­a Hotmart Â· Tarjeta, PayPal y mÃ¡s mÃ©todos</p>
       </div>
     </div>
   </div>
@@ -338,7 +383,7 @@
   <div class="container">
     <div class="section-head">
       <div class="divider-label">Conoce el programa</div>
-      <h2>Mira de qué se trata en menos de 1 minuto</h2>
+      <h2>Mira de quÃ© se trata en menos de 1 minuto</h2>
     </div>
     <div class="video-frame">
       <video controls preload="metadata" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
@@ -364,28 +409,28 @@
 <section class="benefits">
   <div class="container">
     <div class="section-head">
-      <div class="divider-label">Lo que lograrás en 30 días</div>
+      <div class="divider-label">Lo que lograrÃ¡s en 30 dÃ­as</div>
     </div>
     <div class="benefits-grid">
       <div class="benefit-card">
-        <div class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg></div>
+        <div class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h10 6"/></svg></div>
         <h3>30 HERRAMIENTAS REALES</h3>
-        <p>Una herramienta por día, aplicada a tu trabajo o negocio. Sin tecnicismos — solo práctica desde el día 1.</p>
+        <p>Una herramienta por dÃ­a, aplicada a tu trabajo o negocio. Sin tecnicismos â solo prÃ¡ctica desde el dÃ­a 1.</p>
       </div>
       <div class="benefit-card">
         <div class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
         <h3>4 SESIONES VIRTUALES EN VIVO</h3>
-        <p>Conéctate desde donde estés — 1.5 horas por semana con ejercicios reales, preguntas en directo y atención del facilitador. Sin desplazamientos, sin excusas.</p>
+        <p>ConÃ©ctate desde donde estÃ©s â 1.5 horas por semana con ejercicios reales, preguntas en directo y atenciÃ³n del facilitador. Sin desplazamientos, sin excusas.</p>
       </div>
       <div class="benefit-card">
         <div class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
         <h3>CAMPUS ONLINE 24/7</h3>
-        <p>Todo el contenido disponible cuando quieras: micro-videos, retos y guías por herramienta. Aprende a las 7AM o a medianoche — el programa no para.</p>
+        <p>Todo el contenido disponible cuando quieras: micro-videos, retos y guÃ­as por herramienta. Aprende a las 7AM o a medianoche â el programa no para.</p>
       </div>
       <div class="benefit-card">
-        <div class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="8" r="2.5"/><path d="M2 20c0-3 2.7-5.5 6-5.5s6 2.5 6 5.5"/><path d="M14.5 14.6c2.1.4 3.5 2 3.5 4.4"/></svg></div>
+        <div class="icon-circle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="8" r="2.5"/><path d="M2 20c0-3 2.7-5.5 6-5.5s6 2.5 6 5.5"/><path d="M14.5 14.6c2.1 4 3.5 2 3.5 4.4"/></svg></div>
         <h3>COMUNIDAD & CERTIFICADO</h3>
-        <p>Grupo privado con soporte continuo durante los 30 días y certificado oficial de Learn5 al finalizar.</p>
+        <p>Grupo privado con soporte continuo durante los 30 dÃ­as y certificado oficial de Learn5 al finalizar.</p>
       </div>
     </div>
   </div>
@@ -397,9 +442,9 @@
     <div class="for-who-box">
       <h2 style="font-size:clamp(20px,4vw,26px);font-weight:800;text-align:center;color:#aef0ff;">Este programa es para ti si:</h2>
       <div class="for-who-grid">
-        <div class="for-who-item"><svg class="check-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Quieres aprender IA de forma práctica, sin tecnicismos</div>
-        <div class="for-who-item"><svg class="check-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Eres emprendedor, freelancer, docente o dueño de negocio</div>
-        <div class="for-who-item"><svg class="check-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Buscas ahorrar tiempo y hacer más con los mismos recursos</div>
+        <div class="for-who-item"><svg class="check-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Quieres aprender IA de forma prÃ¡ctica, sin tecnicismos</div>
+        <div class="for-who-item"><svg class="check-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Eres emprendedor, freelancer, docente o dueÃ±o de negocio</div>
+        <div class="for-who-item"><svg class="check-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Buscas ahorrar tiempo y hacer mÃ¡s con los mismos recursos</div>
         <div class="for-who-item"><svg class="check-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Quieres entender la IA antes de que el resto se adelante</div>
       </div>
     </div>
@@ -410,7 +455,7 @@
 <section class="facilitator">
   <div class="container">
     <div class="section-head">
-      <div class="divider-label">Quién te acompaña</div>
+      <div class="divider-label">QuiÃ©n te acompaÃ±a</div>
       <h2>Tu facilitador</h2>
     </div>
     <div class="facilitator-grid">
@@ -420,11 +465,11 @@
       <div class="facilitator-card">
         <span class="role-tag">Facilitador del programa</span>
         <h3>Gelkin Pulido</h3>
-        <p class="bio">Lidero proyectos de innovación y transformación educativa, enfocados en cómo la tecnología — y hoy la inteligencia artificial — puede potenciar el aprendizaje y la productividad de personas y equipos. Mi camino incluye ser especialista en educación en línea dentro del sector universitario y formador en capacitación corporativa, pero mi enfoque va más allá de dar clases: se trata de diseñar estrategias que generan cambio real. Desde hace casi 3 años aplico la IA de forma práctica — primero para amplificar mis propias capacidades, y hoy para llevar ese aprendizaje a docentes, profesionales y emprendedores.</p>
+        <p class="bio">Lidero proyectos de innovaciÃ³n y transformaciÃ³n educativa, enfocados en cÃ³mo la tecnologÃ­a â y hoy la inteligencia artificial â puede potenciar el aprendizaje y la productividad de personas y equipos. Mi camino incluye ser especialista en educaciÃ³n en lÃ­nea dentro del sector universitario y formador en capacitaciÃ³n corporativa, pero mi enfoque va mÃ¡s allÃ¡ de dar clases: se trata de diseÃ±ar estrategias que generan cambio real. Desde hace casi 3 aÃ±os aplico la IA de forma prÃ¡ctica â primero para amplificar mis propias capacidades, y hoy para llevar ese aprendizaje a docentes, profesionales y emprendedores.</p>
         <ul class="facilitator-creds">
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Líder de proyectos de innovación educativa</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Especialista en educación en línea, sector universitario</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Casi 3 años aplicando IA en aprendizaje y productividad</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> LÃ­der de proyectos de innovaciÃ³n educativa</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Especialista en educaciÃ³n en lÃ­nea, sector universitario</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Casi 3 aÃ±os aplicando IA en aprendizaje y productividad</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Trabaja con docentes, profesionales y emprendedores</li>
         </ul>
         <a class="linkedin-btn" href="https://www.linkedin.com/in/gelkinpulidoruiz/" target="_blank" rel="noopener">
@@ -441,49 +486,49 @@
   <div class="container">
     <div class="section-head">
       <div class="divider-label">Estructura del programa</div>
-      <h2>4 semanas · 30 herramientas · Resultados reales</h2>
+      <h2>4 semanas Â· 30 herramientas Â· Resultados reales</h2>
     </div>
-    <p class="temario-note">1 sesión virtual en vivo por semana (1.5 h por Zoom) + reto y contenido online disponible 24/7 entre sesiones.</p>
+    <p class="temario-note">1 sesiÃ³n virtual en vivo por semana (1.5 h por Zoom) + reto y contenido online disponible 24/7 entre sesiones.</p>
     <div class="temario-grid">
       <div class="temario-card day1">
-        <span class="temario-day">Semana 1 · Sesión virtual en vivo · 1.5 h</span>
+        <span class="temario-day">Semana 1 Â· SesiÃ³n virtual en vivo Â· 1.5 h</span>
         <h3>Fundamentos & Prompting inteligente</h3>
         <ul class="temario-list">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Mapa del ecosistema de IA: qué herramienta usar y cuándo</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Prompting práctico: cómo obtener resultados reales con ChatGPT y Claude</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Mapa del ecosistema de IA: quÃ© herramienta usar y cuÃ¡ndo</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Prompting prÃ¡ctico: cÃ³mo obtener resultados reales con ChatGPT y Claude</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Reto: construye el asistente virtual de tu negocio en 1 hora</li>
         </ul>
-        <div class="semana-tools"><b>Herramientas:</b> ChatGPT · Claude · Gemini · Perplexity · Copilot · NotebookLM</div>
+        <div class="semana-tools"><b>Herramientas:</b> ChatGPT Â· Claude Â· Gemini Â· Perplexity Â· Copilot Â· NotebookLM</div>
       </div>
       <div class="temario-card day2">
-        <span class="temario-day">Semana 2 · Sesión virtual en vivo · 1.5 h</span>
+        <span class="temario-day">Semana 2 Â· SesiÃ³n virtual en vivo Â· 1.5 h</span>
         <h3>Contenido & Creatividad con IA</h3>
         <ul class="temario-list">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Crea imagen, audio y video con IA para tu negocio o marca</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Diseño sin ser diseñador: Canva AI y generadores de imagen</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> DiseÃ±o sin ser diseÃ±ador: Canva AI y generadores de imagen</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Reto: crea una pieza de contenido completa en 30 minutos</li>
         </ul>
-        <div class="semana-tools"><b>Herramientas:</b> Canva AI · Leonardo · ElevenLabs · HeyGen · CapCut AI · Runway</div>
+        <div class="semana-tools"><b>Herramientas:</b> Canva AI Â· Leonardo Â· ElevenLabs Â· HeyGen Â· CapCut AI Â· Runway</div>
       </div>
       <div class="temario-card day3">
-        <span class="temario-day">Semana 3 · Sesión virtual en vivo · 1.5 h</span>
-        <h3>Automatización & Productividad</h3>
+        <span class="temario-day">Semana 3 Â· SesiÃ³n virtual en vivo Â· 1.5 h</span>
+        <h3>AutomatizaciÃ³n & Productividad</h3>
         <ul class="temario-list">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Conecta tus apps y crea flujos automáticos sin programar</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Automatización de tareas repetitivas con Make, Zapier y n8n</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Conecta tus apps y crea flujos automÃ¡ticos sin programar</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> AutomatizaciÃ³n de tareas repetitivas con Make, Zapier y n8n</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Reto: automatiza una tarea que haces manualmente cada semana</li>
         </ul>
-        <div class="semana-tools"><b>Herramientas:</b> Make · Zapier · Notion AI · Typebot · n8n · Gamma</div>
+        <div class="semana-tools"><b>Herramientas:</b> Make Â· Zapier Â· Notion AI Â· Typebot Â· n8n Â· Gamma</div>
       </div>
       <div class="temario-card day4">
-        <span class="temario-day">Semana 4 · Sesión virtual en vivo · 1.5 h</span>
-        <h3>Agentes IA & Plan de acción</h3>
+        <span class="temario-day">Semana 4 Â· SesiÃ³n virtual en vivo Â· 1.5 h</span>
+        <h3>Agentes IA & Plan de acciÃ³n</h3>
         <ul class="temario-list">
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Crea tu propio agente de IA personalizado para tu negocio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Graduación: define tu stack de IA y plan de implementación</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> GraduaciÃ³n: define tu stack de IA y plan de implementaciÃ³n</li>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg> Reto final: 5 herramientas que van a cambiar tu semana</li>
         </ul>
-        <div class="semana-tools"><b>Herramientas:</b> Custom GPTs · Claude Projects · Dify · Voiceflow · Beautiful.ai · y más</div>
+        <div class="semana-tools"><b>Herramientas:</b> Custom GPTs Â· Claude Projects Â· Dify Â· Voiceflow Â· Beautiful.ai Â· y mÃ¡s</div>
       </div>
     </div>
   </div>
@@ -494,24 +539,24 @@
   <div class="container">
     <div class="details-grid">
       <div class="detail-card">
-        <div class="icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></div>
-        <h4>Inicio · Primera cohorte 🔥</h4>
-        <p>Fecha por confirmar<span>Pre-inscríbete hoy para ser el primero en saberlo</span></p>
+        <div class="icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4L16 3v4"/></svg></div>
+        <h4>Inicio Â· Primera cohorte ð¥</h4>
+        <p style="color:var(--cyan-2);">18 de agosto, 2026<span style="color:var(--muted);">Confirmado â primera cohorte "Miami Edition"</span></p>
       </div>
       <div class="detail-card">
         <div class="icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
         <h4>Sesiones virtuales en vivo</h4>
-        <p>Por Zoom<span>1 sesión por semana · 1.5 horas · 4 semanas</span></p>
+        <p>Por Zoom<span>1 sesiÃ³n por semana Â· 1.5 horas Â· 4 semanas</span></p>
       </div>
       <div class="detail-card">
         <div class="icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg></div>
-        <h4>100% virtual — desde cualquier lugar</h4>
-        <p>Zoom + campus online<span>Accede desde Miami, LATAM o donde estés</span></p>
+        <h4>100% virtual â desde cualquier lugar</h4>
+        <p>Zoom + campus online<span>Accede desde Miami, LATAM o donde estÃ©s</span></p>
       </div>
       <div class="detail-card">
         <div class="icon-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
         <h4>Campus online 24/7</h4>
-        <p>Disponible siempre<span>Videos + retos + guías por herramienta. Aprende a tu ritmo, cuando quieras.</span></p>
+        <p>Disponible siempre<span>Videos + retos + guÃ­as por herramienta. Aprende a tu ritmo, cuando quieras.</span></p>
       </div>
     </div>
   </div>
@@ -521,29 +566,41 @@
 <section class="investment">
   <div class="container">
     <div class="section-head">
-      <div class="divider-label">Tu inversión</div>
-      <h2>$129 + impuestos<br><span class="gradient-text">20% OFF para los primeros inscritos</span></h2>
+      <div class="divider-label">Tu inversiÃ³n</div>
+      <h2>Early bird: <span class="gradient-text">$97</span><br><span style="font-size:clamp(16px,3vw,22px);font-weight:700;color:var(--muted);">Precio regular $197 Â· <span class="gradient-text">51% OFF</span> solo para los primeros 25</span></h2>
     </div>
     <div class="price-card">
       <div class="early-bird-badge">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        Early bird · 20% OFF
+        ð Pre-lanzamiento Â· Early Bird Â· 51% OFF
       </div>
-      <p class="price-regular">$129 + impuestos</p>
-      <div class="price-early">$103<span>+ imp.</span></div>
-      <p class="price-label">Precio especial para los primeros inscritos · Pago seguro vía Hotmart</p>
+      <p class="price-regular">$197 precio regular</p>
+      <div class="price-early">$97<span style="font-size:14px;font-weight:600;-webkit-text-fill-color:var(--muted);color:var(--muted);">USD</span></div>
+      <p class="price-savings">â Ahorras $100 Â· VÃ¡lido solo para los primeros 25 participantes</p>
+      <p class="price-label" style="margin-top:6px;">Precio early bird vÃ¡lido hasta llenar los 25 cupos Â· Pago seguro vÃ­a Hotmart</p>
+
+      <!-- ACTIVATION COUNTER -->
+      <div class="activation-counter">
+        <div class="activation-title">ð¥ <span id="cuposCount">7</span> de 25 cupos tomados</div>
+        <div class="activation-bar-wrap"><div class="activation-bar" id="actBar" style="width:28%;"></div></div>
+        <div class="activation-label">Faltan <b id="cuposLeft">18</b> inscritos para activar la cohorte</div>
+        <div class="start-date-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          Inicio: 18 de agosto, 2026
+        </div>
+      </div>
       <ul class="price-perks">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> 4 sesiones virtuales en vivo por Zoom (1.5 h/sesión)</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Campus online 24/7 por 30 días: videos + retos + guías</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Comunidad privada con soporte durante los 30 días</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Certificado oficial de finalización — Learn5</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> 4 sesiones virtuales en vivo por Zoom (1.5 h/sesiÃ³n)</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Campus online 24/7 por 30 dÃ­as: videos + retos + guÃ­as</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Comunidad privada con soporte durante los 30 dÃ­as</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg> Certificado oficial de finalizaciÃ³n â Learn5</li>
       </ul>
       <a href="https://hotmart.com/es/club/learn5/products" target="_blank" rel="noopener" class="buy-btn">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Inscríbete ahora en Hotmart
+        InscrÃ­bete ahora â $97 Early Bird
       </a>
     </div>
-    <p class="contact-line">¿Dudas? Escríbenos por WhatsApp al <a href="https://wa.me/17865271196" target="_blank" rel="noopener">+1 786 527 1196</a> o a <a href="mailto:contacto@learn5.tech">contacto@learn5.tech</a></p>
+    <p class="contact-line">Â¿Dudas? EscrÃ­benos por WhatsApp al <a href="https://wa.me/17865271196" target="_blank" rel="noopener">+1 786 527 1196</a> o a <a href="mailto:contacto@learn5.tech">contacto@learn5.tech</a></p>
   </div>
 </section>
 
@@ -552,10 +609,11 @@
   <div class="hero-glow glow-violet" style="top:auto;bottom:-100px;left:50%;transform:translateX(-50%);"></div>
   <div class="container">
     <h2>Empieza. Aprende. <span class="gradient-text">Transforma.</span></h2>
+    <p style="color:var(--muted);font-size:15px;margin:14px 0 28px;max-width:480px;margin-inline:auto;">Solo <b style="color:var(--cyan-2);">25 cupos</b> al precio early bird de <b style="color:#a855f7;">$97</b>. Inicio garantizado el <b style="color:var(--cyan-2);">18 de agosto</b> cuando se completen.</p>
     <a href="https://hotmart.com/es/club/learn5/products" target="_blank" rel="noopener" class="cta-button">
-      Inscríbete ahora →
+      InscrÃ­bete al precio early bird â $97 â
     </a>
-    <p class="urgency">Primera cohorte Miami — cupos limitados. <b>Los primeros inscritos tienen prioridad.</b></p>
+    <p class="urgency">ð¥ Pre-lanzamiento Â· 7 cupos tomados de 25 Â· <b>Â¡El precio sube a $197 al completarse!</b></p>
   </div>
 </section>
 
@@ -565,7 +623,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">LEARN<span>5</span></div>
-        <p>Transformamos la educación en LATAM y EE.UU. con inteligencia artificial. EdTech con sede en Miami, Florida.</p>
+        <p>Transformamos la educaciÃ³n en LATAM y EE.UU. con inteligencia artificial. EdTech con sede en Miami, Florida.</p>
         <div class="social-row">
           <a href="https://www.linkedin.com/company/learn5/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2 2 0 014 0V17M12 12.5V17"/></svg></a>
           <a href="https://www.instagram.com/learn5_tech/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
@@ -575,7 +633,7 @@
       <div class="footer-col">
         <h5>Cursos</h5>
         <ul>
-          <li><a href="https://hotmart.com/es/club/learn5/products">IA en 30 Días — Miami</a></li>
+          <li><a href="https://hotmart.com/es/club/learn5/products">IA en 30 DÃ­as â Miami</a></li>
           <li><a href="https://hotmart.com/es/club/learn5/products">IA en el Aula 2026</a></li>
           <li><a href="https://hotmart.com/es/club/learn5/products">Transforma tu Futuro con IA</a></li>
           <li><a href="https://hotmart.com/es/club/learn5/products">Learn5 Pass</a></li>
@@ -597,17 +655,17 @@
           <li><a href="https://www.linkedin.com/newsletters/clase-futura-7351652235795152900/">Newsletter Clase Futura</a></li>
           <li><a href="mailto:contacto@learn5.tech">contacto@learn5.tech</a></li>
           <li><a href="https://wa.me/17865271196">+1 786 527-1196</a></li>
-          <li><a href="#">📍 Miami, Florida</a></li>
+          <li><a href="#">ð Miami, Florida</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2024–2026 Learn5 LLC · Miami, Florida · Todos los derechos reservados. · <a href="https://learn5.pro/">learn5.pro</a></p>
+      <p>Â© 2024â2026 Learn5 LLC Â· Miami, Florida Â· Todos los derechos reservados. Â· <a href="https://learn5.pro/">learn5.pro</a></p>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/17865271196?text=Hola%2C%20quiero%20m%C3%A1s%20info%20del%20programa%20IA%20en%2030%20D%C3%ADas%20Miami" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escríbenos por WhatsApp">
+<a href="https://wa.me/17865271196?text=Hola%2C%20quiero%20m%C3%A1s%20info%20del%20programa%20IA%20en%2030%20D%C3%ADas%20Miami" target="_blank" rel="noopener" class="whatsapp-float" aria-label="EscrÃ­benos por WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.33A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.29 1.21-1.78 1.28-.45.07-1.02.1-1.65-.1-.38-.12-.87-.28-1.5-.55-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.08-1.44-1.08-2.74 0-1.3.68-1.94.92-2.2.24-.27.53-.33.7-.33h.5c.16 0 .38-.06.59.45.22.53.74 1.83.8 1.96.07.13.11.29.02.46-.42.84-.87 1.07-1.18 1.38-.13.13-.27.27-.11.55.7 1.23 1.45 1.97 2.5 2.6.94.55 1.42.78 1.7.6.21-.14.6-.5.86-.85.26-.34.46-.36.7-.27.24.09 1.52.72 1.78.85.27.13.45.2.51.31.07.12.07.67-.15 1.3z"/></svg>
 </a>
 

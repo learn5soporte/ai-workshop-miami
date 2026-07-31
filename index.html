@@ -963,7 +963,7 @@ function animateScenario(s) {
 
   // Typing effect
   let i = 0;
-  const speed = 28;
+  const speed = 55;
   function typeChar() {
     if (i < s.prompt.length) {
       promptEl.textContent += s.prompt[i++];
@@ -974,12 +974,12 @@ function animateScenario(s) {
       setTimeout(() => {
         responseEl.innerHTML = s.response;
         responseBox.classList.add('visible');
-        // Mostrar cards en cascada
+        // Mostrar cards en cascada con más tiempo entre cada una
         const cards = grid.querySelectorAll('.result-card');
         cards.forEach((c, idx) => {
-          setTimeout(() => c.classList.add('visible'), 200 + idx * 120);
+          setTimeout(() => c.classList.add('visible'), 600 + idx * 200);
         });
-      }, 400);
+      }, 800);
     }
   }
   typeChar();
@@ -990,7 +990,7 @@ function autoRotate() {
   return setInterval(() => {
     const next = (currentIdx + 1) % scenarios.length;
     setPrompt(next);
-  }, 8000);
+  }, 18000);
 }
 
 let rotateInterval = autoRotate();

@@ -841,6 +841,7 @@
       <button class="p-btn" onclick="setPrompt(1)">📋 RRHH & Onboarding</button>
       <button class="p-btn" onclick="setPrompt(2)">💼 Ventas</button>
       <button class="p-btn" onclick="setPrompt(3)">⚙️ Automatización</button>
+      <button class="p-btn" onclick="setPrompt(4)">🗓️ Planifica tu día</button>
     </div>
 
     <!-- Terminal -->
@@ -909,6 +910,16 @@ const scenarios = [
       { icon: '🧠', tag: 'IA', title: 'Respuesta personalizada por IA', desc: 'Cada email se adapta al mensaje y perfil del cliente', pill: 'Claude API' },
       { icon: '📊', tag: 'CRM', title: 'Lead registrado y categorizado', desc: 'Con score, fuente y etiquetas automáticas', pill: 'GoHighLevel' },
       { icon: '🔔', tag: 'Notificación', title: 'Alerta en WhatsApp o Slack', desc: 'Te avisa solo cuando el lead es de alta prioridad', pill: 'n8n + Zapier' },
+    ]
+  },
+  {
+    prompt: 'Son las 8am. Tengo reuniones, pendientes del trabajo, quiero hacer ejercicio y necesito responder emails importantes. Ayúdame a planificar mi día de forma realista.',
+    response: 'Plan para hoy: <span class="highlight">8:00–8:30 Bloque de enfoque</span> — responde los 3 emails clave antes de que lleguen interrupciones. <span class="highlight">9:00 Reunión 1</span> — agenda enviada. <span class="highlight">12:30 Ejercicio 30 min</span> — bloqueado en calendario. Tarde: tareas de menor concentración…',
+    results: [
+      { icon: '📅', tag: 'Agenda', title: 'Plan del día personalizado', desc: 'Bloques de tiempo según tu energía y prioridades reales', pill: 'ChatGPT + Notion AI' },
+      { icon: '✉️', tag: 'Emails', title: 'Borradores listos para enviar', desc: 'IA redacta los 3 emails importantes en 2 minutos', pill: 'Claude' },
+      { icon: '🎯', tag: 'Enfoque', title: 'Top 3 prioridades del día', desc: 'Lo que sí o sí debes completar hoy, sin distracciones', pill: 'ChatGPT' },
+      { icon: '🔄', tag: 'Rutina', title: 'Sistema de planificación semanal', desc: 'Automatiza tu revisión del domingo para la semana siguiente', pill: 'Notion AI + Make' },
     ]
   }
 ];
@@ -1172,13 +1183,18 @@ setPrompt(0);
         <div class="fac-avatar">GP</div>
         <div>
           <p class="fac-name">Gelkin Pulido</p>
-          <p class="fac-role">Fundador · Learn5 · Especialista en IA Aplicada y Educación Digital</p>
-          <p class="fac-bio">Lidero proyectos de innovación y transformación educativa, enfocados en cómo la tecnología — y hoy la inteligencia artificial — puede potenciar el aprendizaje y la productividad de personas y equipos. Casi 3 años aplicando IA de forma práctica, primero para amplificar mis propias capacidades, y hoy para llevar ese aprendizaje a docentes, profesionales y emprendedores.</p>
-          <div class="fac-tags">
-            <span class="fac-tag">Líder de proyectos de innovación educativa</span>
-            <span class="fac-tag">Especialista en educación online</span>
-            <span class="fac-tag">+3 años aplicando IA</span>
-            <span class="fac-tag">Miami · LATAM</span>
+          <p class="fac-role">Educador, innovador y especialista en IA aplicada · Fundador de Learn5</p>
+          <p class="fac-bio">Gelkin lleva <strong style="color:var(--white)">15 años</strong> trabajando en proyectos educativos y tecnológicos en América Latina y Estados Unidos. Ha diseñado programas de formación, liderado iniciativas de transformación digital y acompañado a instituciones, empresas y profesionales en el uso estratégico de la tecnología para aprender mejor y trabajar con más impacto.</p>
+          <p class="fac-bio" style="margin-top:10px;">Desde hace <strong style="color:var(--white)">3 años</strong> aplica inteligencia artificial de forma sistemática en su trabajo diario — no como experimento, sino como herramienta real de productividad, creación y enseñanza. Hoy comparte ese aprendizaje con quienes quieren ir más allá de la curiosidad y empezar a usar la IA de verdad.</p>
+          <div class="fac-tags" style="margin-bottom:20px;">
+            <span class="fac-tag">+15 años en educación y tecnología</span>
+            <span class="fac-tag">3 años aplicando IA</span>
+            <span class="fac-tag">LATAM · EE.UU.</span>
+            <span class="fac-tag">Miami, Florida</span>
+          </div>
+          <div style="background:rgba(29,158,117,0.06); border-left:3px solid var(--teal); border-radius:0 10px 10px 0; padding:18px 20px; margin-top:4px;">
+            <p style="font-size:11px; font-weight:700; letter-spacing:2px; color:var(--teal); margin-bottom:10px;">SU FILOSOFÍA</p>
+            <p style="font-size:14px; color:var(--gray2); line-height:1.8; font-style:italic;">"La IA no es una fórmula mágica. Es una habilidad. Y como toda habilidad, se construye con disciplina, con práctica y con la disposición honesta de aprender. Quien llegue aquí buscando un atajo, no encontrará lo que busca. Quien llegue dispuesto a dedicarle tiempo y esfuerzo, va a transformar la forma en que trabaja."</p>
           </div>
         </div>
       </div>

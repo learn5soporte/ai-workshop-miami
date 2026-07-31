@@ -538,6 +538,184 @@
       color: var(--gray3);
     }
 
+
+
+/* ── DEMO SECTION ── */
+.demo-section {
+  padding: 70px 40px;
+  background: var(--navy);
+}
+.demo-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Terminal */
+.terminal-wrap {
+  background: #0E0E16;
+  border: 1px solid rgba(83,74,183,0.4);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 0 60px rgba(83,74,183,0.15);
+}
+.terminal-bar {
+  background: #1A1A2E;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.t-dot { width: 11px; height: 11px; border-radius: 50%; }
+.t-dot.red   { background: #FF5F57; }
+.t-dot.yellow{ background: #FFBD2E; }
+.t-dot.green { background: #28CA41; }
+.t-title {
+  font-size: 12px;
+  color: var(--gray3);
+  margin-left: 8px;
+  font-family: monospace;
+}
+.terminal-body {
+  padding: 24px 28px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  min-height: 160px;
+}
+.t-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+.t-prompt-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.t-arrow { color: var(--violet-l); flex-shrink: 0; }
+.t-text  { color: #E8E6FF; line-height: 1.6; }
+.t-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 16px;
+  background: var(--teal);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.t-response {
+  border-left: 2px solid var(--teal);
+  padding-left: 14px;
+  color: var(--gray2);
+  font-size: 13px;
+  line-height: 1.7;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.t-response.visible { opacity: 1; }
+.t-response .highlight { color: var(--teal-l); font-weight: 600; }
+
+/* Grid resultados */
+.results-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--gray3);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.result-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(83,74,183,0.2);
+  border-radius: 12px;
+  padding: 20px 16px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s, transform 0.4s, border-color 0.2s;
+  cursor: default;
+}
+.result-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.result-card:hover {
+  border-color: var(--violet);
+  background: rgba(83,74,183,0.08);
+}
+.result-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+  display: block;
+}
+.result-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.result-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.result-desc {
+  font-size: 11px;
+  color: var(--gray3);
+  line-height: 1.5;
+}
+.result-pill {
+  display: inline-block;
+  margin-top: 8px;
+  background: rgba(83,74,183,0.15);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 10px;
+  color: var(--violet-l);
+}
+
+/* Prompts cycling */
+.prompt-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.p-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(83,74,183,0.25);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  color: var(--gray3);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.p-btn.active, .p-btn:hover {
+  background: rgba(83,74,183,0.2);
+  border-color: var(--violet);
+  color: var(--violet-l);
+}
+
+@media (max-width: 768px) {
+  .results-grid { grid-template-columns: repeat(2, 1fr); }
+  .terminal-body { font-size: 12px; padding: 16px; }
+}
+
     /* ── WHATSAPP FLOAT ── */
     .wa-float {
       position: fixed;
@@ -647,26 +825,174 @@
     </div>
   </div>
 
-  <!-- VIDEO -->
-  <section>
-    <div class="section-inner">
-      <p class="section-tag">Conoce el programa</p>
-      <h2 class="section-title">Mira de qué se trata en menos de 1 minuto</h2>
-      <div class="video-wrap">
-        <!-- Reemplaza VIDEO_ID con el ID de tu video en YouTube o Vimeo -->
-        <!-- Opción A – YouTube: <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe> -->
-        <!-- Opción B – Vimeo:  <iframe src="https://player.vimeo.com/video/VIDEO_ID" allowfullscreen></iframe> -->
-        <!-- Opción C – Archivo local (si el hosting lo permite): -->
-        <video controls preload="metadata" poster="">
-          <source src="ai_workshop_video.mp4" type="video/mp4">
-          Tu navegador no soporta video HTML5.
-        </video>
-      </div>
-      <p style="font-size:12px; color:var(--gray3); margin-top:10px; text-align:center;">
-        💡 Si tienes el video en YouTube o Vimeo, reemplaza el bloque <code>&lt;video&gt;</code> con el <code>&lt;iframe&gt;</code> correspondiente para mejor compatibilidad.
-      </p>
+
+<!-- DEMO SECTION: Terminal + Grid de resultados -->
+<!-- ESTILOS - pegar dentro del <style> existente -->
+<!-- HTML - reemplaza la sección del video -->
+<section class="demo-section">
+  <div class="demo-inner">
+    <p class="section-tag">Ve la IA en acción</p>
+    <h2 class="section-title" style="margin-bottom:8px;">Un prompt. Resultados infinitos.</h2>
+    <p class="section-desc" style="margin-bottom:28px;">Así se ve aprender IA con Learn5 — herramientas reales, resultados reales desde el día 1.</p>
+
+    <!-- Botones de escenarios -->
+    <div class="prompt-nav">
+      <button class="p-btn active" onclick="setPrompt(0)">📢 Marketing</button>
+      <button class="p-btn" onclick="setPrompt(1)">📋 RRHH & Onboarding</button>
+      <button class="p-btn" onclick="setPrompt(2)">💼 Ventas</button>
+      <button class="p-btn" onclick="setPrompt(3)">⚙️ Automatización</button>
     </div>
-  </section>
+
+    <!-- Terminal -->
+    <div class="terminal-wrap">
+      <div class="terminal-bar">
+        <div class="t-dot red"></div>
+        <div class="t-dot yellow"></div>
+        <div class="t-dot green"></div>
+        <span class="t-title">Claude AI · Learn5 Workspace</span>
+      </div>
+      <div class="terminal-body">
+        <p class="t-label">TU PROMPT</p>
+        <div class="t-prompt-line">
+          <span class="t-arrow">▶</span>
+          <span class="t-text" id="promptText"></span><span class="t-cursor" id="cursor"></span>
+        </div>
+        <div class="t-response" id="responseBox">
+          <span id="responseText"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid de resultados -->
+    <p class="results-label">Lo que puedes crear con eso 👇</p>
+    <div class="results-grid" id="resultsGrid"></div>
+  </div>
+</section>
+
+<script>
+const scenarios = [
+  {
+    prompt: 'Crea una estrategia de contenido para Instagram para mi negocio de repostería en Miami. Necesito 5 posts para esta semana.',
+    response: 'Aquí tienes tu plan de contenido semanal: <span class="highlight">Lun: "Behind the scenes"</span> mostrando tu proceso, <span class="highlight">Mar: Producto estrella</span> con copy de venta, <span class="highlight">Mié: Testimonio de cliente</span>…',
+    results: [
+      { icon: '📸', tag: 'Instagram', title: '5 posts listos para publicar', desc: 'Captions, hashtags y horarios optimizados incluidos', pill: 'ChatGPT + Canva AI' },
+      { icon: '🎬', tag: 'Video', title: 'Reel de 30s con guión', desc: 'Script + sugerencias visuales para CapCut', pill: 'ElevenLabs + Runway' },
+      { icon: '🖼️', tag: 'Imagen', title: 'Foto del producto generada', desc: 'Sin sesión fotográfica. Con IA y en minutos.', pill: 'Leonardo AI' },
+      { icon: '📅', tag: 'Calendario', title: 'Plan de contenido del mes', desc: 'Exportable a Notion con fechas y temas', pill: 'Notion AI' },
+    ]
+  },
+  {
+    prompt: 'Diseña un programa de inducción de 30 días para nuevos empleados en mi empresa de servicios. Incluye materiales y evaluaciones.',
+    response: 'Programa de inducción estructurado: <span class="highlight">Semana 1: Cultura y valores</span> con bienvenida automatizada, <span class="highlight">Semana 2: Procesos clave</span> con videos explicativos, <span class="highlight">Evaluación diaria</span> adaptativa…',
+    results: [
+      { icon: '🤖', tag: 'Asistente IA', title: 'Bot de bienvenida 24/7', desc: 'Responde preguntas del nuevo empleado al instante', pill: 'Voiceflow + Claude' },
+      { icon: '📋', tag: 'Documentos', title: 'Manual de inducción digital', desc: 'Interactivo, actualizable y consultable en lenguaje natural', pill: 'Notion AI' },
+      { icon: '📊', tag: 'Seguimiento', title: 'Dashboard de progreso', desc: 'RRHH ve en tiempo real dónde está cada colaborador', pill: 'Make + Airtable' },
+      { icon: '🎓', tag: 'Certificado', title: 'Evaluación automática', desc: 'Quizzes adaptativos y certificado al completar', pill: 'Typebot' },
+    ]
+  },
+  {
+    prompt: 'Escríbeme un email de seguimiento para un cliente que vio mi propuesta hace 3 días y no ha respondido. Tono profesional pero cercano.',
+    response: 'Asunto: <span class="highlight">"Una pregunta rápida, [Nombre]"</span> — Hola [Nombre], quería asegurarme de que la propuesta llegó bien y resolver cualquier duda que tengas antes de tomar una decisión…',
+    results: [
+      { icon: '✉️', tag: 'Email', title: 'Secuencia de 5 follow-ups', desc: 'Cada email con tono diferente y momento óptimo de envío', pill: 'ChatGPT + Instantly' },
+      { icon: '🤝', tag: 'CRM', title: 'Flujo de seguimiento auto', desc: 'Se activa solo cuando el cliente abre la propuesta', pill: 'Make + Zapier' },
+      { icon: '📞', tag: 'Script', title: 'Guión para llamada de cierre', desc: 'Con manejo de objeciones más comunes de tu industria', pill: 'Claude' },
+      { icon: '📈', tag: 'Análisis', title: 'Tasa de respuesta optimizada', desc: 'IA analiza qué mensajes convierten mejor en tu sector', pill: 'Perplexity + GPT' },
+    ]
+  },
+  {
+    prompt: 'Automatiza el proceso de recibir un formulario de contacto en mi web, guardarlo en mi CRM y enviar una respuesta personalizada al cliente.',
+    response: 'Flujo automatizado listo: <span class="highlight">1. Tally captura el form</span> → <span class="highlight">2. Make lo procesa</span> → <span class="highlight">3. Se crea el contacto en tu CRM</span> → <span class="highlight">4. Claude genera email personalizado</span> y se envía automático…',
+    results: [
+      { icon: '⚡', tag: 'Automatización', title: 'Flujo 100% sin intervención', desc: 'De formulario a CRM a email en menos de 30 segundos', pill: 'Make + Tally' },
+      { icon: '🧠', tag: 'IA', title: 'Respuesta personalizada por IA', desc: 'Cada email se adapta al mensaje y perfil del cliente', pill: 'Claude API' },
+      { icon: '📊', tag: 'CRM', title: 'Lead registrado y categorizado', desc: 'Con score, fuente y etiquetas automáticas', pill: 'GoHighLevel' },
+      { icon: '🔔', tag: 'Notificación', title: 'Alerta en WhatsApp o Slack', desc: 'Te avisa solo cuando el lead es de alta prioridad', pill: 'n8n + Zapier' },
+    ]
+  }
+];
+
+let currentIdx = 0;
+let typingTimer = null;
+
+function setPrompt(idx) {
+  currentIdx = idx;
+  document.querySelectorAll('.p-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+  animateScenario(scenarios[idx]);
+}
+
+function animateScenario(s) {
+  clearTimeout(typingTimer);
+  const promptEl = document.getElementById('promptText');
+  const cursorEl = document.getElementById('cursor');
+  const responseBox = document.getElementById('responseBox');
+  const responseEl = document.getElementById('responseText');
+  const grid = document.getElementById('resultsGrid');
+
+  // Reset
+  promptEl.textContent = '';
+  responseBox.classList.remove('visible');
+  responseEl.innerHTML = '';
+  grid.innerHTML = '';
+  cursorEl.style.display = 'inline-block';
+
+  // Crear cards ocultas
+  s.results.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'result-card';
+    card.innerHTML = `
+      <span class="result-icon">${r.icon}</span>
+      <p class="result-tag">${r.tag}</p>
+      <p class="result-title">${r.title}</p>
+      <p class="result-desc">${r.desc}</p>
+      <span class="result-pill">${r.pill}</span>`;
+    grid.appendChild(card);
+  });
+
+  // Typing effect
+  let i = 0;
+  const speed = 28;
+  function typeChar() {
+    if (i < s.prompt.length) {
+      promptEl.textContent += s.prompt[i++];
+      typingTimer = setTimeout(typeChar, speed);
+    } else {
+      cursorEl.style.display = 'none';
+      // Mostrar respuesta
+      setTimeout(() => {
+        responseEl.innerHTML = s.response;
+        responseBox.classList.add('visible');
+        // Mostrar cards en cascada
+        const cards = grid.querySelectorAll('.result-card');
+        cards.forEach((c, idx) => {
+          setTimeout(() => c.classList.add('visible'), 200 + idx * 120);
+        });
+      }, 400);
+    }
+  }
+  typeChar();
+}
+
+// Auto-rotate cada 8 segundos
+function autoRotate() {
+  return setInterval(() => {
+    const next = (currentIdx + 1) % scenarios.length;
+    setPrompt(next);
+  }, 8000);
+}
+
+let rotateInterval = autoRotate();
+document.querySelectorAll('.p-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    clearInterval(rotateInterval);
+    rotateInterval = autoRotate();
+  });
+});
+
+// Iniciar
+setPrompt(0);
+</script>
 
   <!-- CARRUSEL HERRAMIENTAS -->
   <div class="carousel-section">

@@ -433,12 +433,9 @@
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      background: var(--violet);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      font-weight: 900;
+      object-fit: cover;
+      border: 3px solid var(--violet);
+      box-shadow: 0 4px 16px rgba(83,74,183,0.35);
       flex-shrink: 0;
     }
     .fac-name { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
@@ -1182,7 +1179,7 @@ setPrompt(0);
       <p class="section-tag">Quién te acompaña</p>
       <h2 class="section-title">Tu facilitador</h2>
       <div class="fac-inner" style="margin-top: 30px;">
-        <div class="fac-avatar">GP</div>
+        <img class="fac-avatar" src="gelkin-facilitador.jpg" alt="Gelkin Pulido">
         <div>
           <p class="fac-name">Gelkin Pulido</p>
           <p class="fac-role">Educador, innovador y especialista en IA aplicada · Fundador de Learn5</p>

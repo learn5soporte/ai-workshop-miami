@@ -1433,7 +1433,16 @@ setPrompt(0);
   <div class="chat-panel" id="chatPanel">
     <div class="chat-header">
       <div class="chat-header-info">
-        <div class="chat-avatar">L5</div>
+        <div class="chat-avatar" style="background:linear-gradient(135deg,#7F77DD,#1D9E75); position:relative; overflow:hidden;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="3" width="16" height="16" rx="3" fill="#F2C9A0"/>
+            <rect x="6" y="6" width="4" height="4" rx="1" fill="#1A1250"/>
+            <rect x="14" y="6" width="4" height="4" rx="1" fill="#1A1250"/>
+            <rect x="8" y="13" width="8" height="2" rx="1" fill="#3C3489"/>
+            <rect x="3" y="1" width="18" height="4" rx="2" fill="#534AB7"/>
+            <rect x="9" y="18" width="6" height="4" rx="1" fill="#D4AF37"/>
+          </svg>
+        </div>
         <div>
           <p class="chat-title">Asistente Learn5</p>
           <p class="chat-status">● En línea</p>
@@ -1450,67 +1459,122 @@ setPrompt(0);
   <script>
     const chatFAQ = {
       start: {
+        msg: "¡Hola! 👋 Soy el asistente de Learn5. Antes de contarte todo, una pregunta rápida: <strong>¿qué te gustaría lograr con la IA?</strong>",
+        options: [
+          { label: "⏱ Ahorrar tiempo en tareas repetitivas", next: "obj_tiempo" },
+          { label: "✍️ Crear contenido más rápido", next: "obj_contenido" },
+          { label: "⚙️ Automatizar mi negocio", next: "obj_automatizar" },
+          { label: "🤔 Aún no sé, quiero explorar", next: "menu" },
+        ]
+      },
+      obj_tiempo: {
+        msg: "Perfecto, es justo lo que más piden. En la <strong>Semana 3</strong> aprendes a automatizar procesos con Make, Zapier y n8n — la mayoría de nuestros participantes recuperan varias horas a la semana desde la primera semana de aplicarlo. Gelkin (el facilitador) lleva 15 años enseñando esto de forma práctica, no teórica.",
+        options: [
+          { label: "💵 ¿Cuánto cuesta?", next: "precio" },
+          { label: "📦 Ver todo lo que incluye", next: "incluye" },
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
+        ]
+      },
+      obj_contenido: {
+        msg: "Excelente. La <strong>Semana 2</strong> está diseñada exactamente para esto: Canva AI, Leonardo, ElevenLabs — vas a poder crear imagen, texto y video en una fracción del tiempo que te toma hoy. Es 100% práctico, con ejercicios en vivo, no solo teoría.",
+        options: [
+          { label: "💵 ¿Cuánto cuesta?", next: "precio" },
+          { label: "📦 Ver todo lo que incluye", next: "incluye" },
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
+        ]
+      },
+      obj_automatizar: {
+        msg: "Justo para eso está la <strong>Semana 4</strong>: construyes tu propio agente de IA para tu negocio — atención al cliente, ventas, seguimiento. Sales del programa con un agente funcionando, no solo con ideas.",
+        options: [
+          { label: "💵 ¿Cuánto cuesta?", next: "precio" },
+          { label: "📦 Ver todo lo que incluye", next: "incluye" },
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
+        ]
+      },
+      menu: {
+        msg: "Dale, pregúntame lo que necesites saber 👇",
         options: [
           { label: "💵 ¿Cuánto cuesta?", next: "precio" },
           { label: "📅 ¿Cuándo empieza?", next: "fecha" },
           { label: "📦 ¿Qué incluye?", next: "incluye" },
-          { label: "🎓 ¿Necesito experiencia?", next: "experiencia" },
-          { label: "💳 ¿Cómo pago?", next: "pago" },
+          { label: "😬 Me parece caro", next: "obj_precio" },
+          { label: "⏰ No tengo tiempo", next: "obj_horario" },
+          { label: "🏢 ¿Sirve para mi área?", next: "obj_area" },
+          { label: "🚀 Quiero registrarme", next: "cta" },
         ]
       },
       precio: {
-        msg: "El precio Early Bird es <strong>$96 USD</strong> (antes $129). Se activa cuando se completen 20 registros, y solo quedan cupos limitados antes de que suba a precio regular.",
+        msg: "El precio Early Bird es <strong>$96 USD</strong> (antes $129) — eso es menos de <strong>$3.2 USD por día</strong> de acceso completo, incluyendo el campus 24/7. Se activa con 20 registros y quedan cupos limitados antes de que suba a precio regular. Cuanto antes te registres, más aseguras el precio bajo.",
         options: [
           { label: "📅 ¿Cuándo empieza?", next: "fecha" },
           { label: "📦 ¿Qué incluye?", next: "incluye" },
           { label: "🚀 Quiero registrarme", next: "cta" },
-          { label: "⬅ Volver a preguntas", next: "start" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
         ]
       },
       fecha: {
-        msg: "Arranca el <strong>17 de agosto</strong>. Son 4 semanas, con 1 sesión en vivo por semana (1.5h por Zoom) más el campus online disponible 24/7 entre sesiones.",
+        msg: "Arranca el <strong>17 de agosto</strong>. Son 4 semanas, 1 sesión en vivo por semana (1.5h por Zoom), más el campus online disponible 24/7 para que avances a tu ritmo entre sesiones — incluso si te pierdes una sesión en vivo, queda grabada.",
         options: [
           { label: "💵 ¿Cuánto cuesta?", next: "precio" },
           { label: "📦 ¿Qué incluye?", next: "incluye" },
           { label: "🚀 Quiero registrarme", next: "cta" },
-          { label: "⬅ Volver a preguntas", next: "start" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
         ]
       },
       incluye: {
-        msg: "✓ 4 sesiones virtuales en vivo por Zoom<br>✓ Campus online 24/7 por 30 días<br>✓ 30 herramientas de IA reales, 1 por día<br>✓ Certificado oficial de finalización<br>✓ Comunidad privada con soporte",
+        msg: "✓ 4 sesiones virtuales en vivo por Zoom<br>✓ Campus online 24/7 por 30 días<br>✓ 30 herramientas de IA reales, 1 por día<br>✓ Certificado oficial de finalización<br>✓ Comunidad privada con soporte<br>✓ Plan de acción personalizado para tu rol",
         options: [
           { label: "💵 ¿Cuánto cuesta?", next: "precio" },
-          { label: "🎓 ¿Necesito experiencia?", next: "experiencia" },
+          { label: "🏢 ¿Sirve para mi área?", next: "obj_area" },
           { label: "🚀 Quiero registrarme", next: "cta" },
-          { label: "⬅ Volver a preguntas", next: "start" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
         ]
       },
-      experiencia: {
-        msg: "No, ninguna. El programa está diseñado para emprendedores, profesionales, docentes y dueños de negocio que parten desde cero. Vamos paso a paso, herramienta por herramienta.",
+      obj_precio: {
+        msg: "Te entiendo, pero míralo así: <strong>$96 ÷ 30 días = $3.2 USD/día</strong> — menos que un café. Con solo automatizar UNA tarea repetitiva de tu semana, ya recuperaste la inversión en tiempo. Y el precio solo sube desde aquí.",
         options: [
-          { label: "📦 ¿Qué incluye?", next: "incluye" },
           { label: "🚀 Quiero registrarme", next: "cta" },
-          { label: "⬅ Volver a preguntas", next: "start" },
+          { label: "📦 Ver todo lo que incluye", next: "incluye" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
+        ]
+      },
+      obj_horario: {
+        msg: "Es solo <strong>1.5 horas en vivo por semana</strong> — el resto lo haces a tu ritmo en el campus 24/7. Si te pierdes una sesión, queda grabada. Está diseñado para gente ocupada, no para gente con tiempo libre de sobra.",
+        options: [
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "📅 ¿Cuándo empieza?", next: "fecha" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
+        ]
+      },
+      obj_area: {
+        msg: "Sí. Los ejercicios se adaptan a marketing, ventas, RRHH, docencia, operaciones y emprendimiento — cada participante construye su plan de acción según su propio rol. No es un curso genérico, se aplica a lo que tú haces.",
+        options: [
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "📦 Ver todo lo que incluye", next: "incluye" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
         ]
       },
       pago: {
-        msg: "Primero reservas tu cupo aquí en la web (sin pago inmediato). Nuestro equipo te envía tu código de descuento Early Bird por correo, y con ese código completas el pago en Hotmart.",
+        msg: "Primero reservas tu cupo aquí (sin pago inmediato). Nuestro equipo te envía tu código de descuento Early Bird por correo, y con ese código completas el pago en Hotmart.",
         options: [
           { label: "💵 ¿Cuánto cuesta?", next: "precio" },
           { label: "🚀 Quiero registrarme", next: "cta" },
-          { label: "⬅ Volver a preguntas", next: "start" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
         ]
       },
       cta: {
-        msg: "¡Perfecto! 🎉 Haz clic abajo para reservar tu cupo — toma menos de 1 minuto.",
+        msg: "¡Vamos! 🎉 Quedan cupos limitados a precio Early Bird — entre más esperes, más sube el precio. Haz clic abajo y reserva tu cupo en menos de 1 minuto.",
         options: [
           { label: "🔗 Reservar mi cupo ahora", next: "REDIRECT", cta: true },
-          { label: "⬅ Volver a preguntas", next: "start" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
         ]
       }
     };
 
-    function toggleChat() {
+        function toggleChat() {
       const panel = document.getElementById('chatPanel');
       const isOpen = panel.classList.toggle('open');
       if (isOpen && document.getElementById('chatQuickReplies').children.length === 0) {

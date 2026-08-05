@@ -969,6 +969,10 @@
 
         <a href="https://tally.so/r/obYYGN" class="btn-primary">Reserva tu cupo Early Bird → $96</a>
         <a href="https://wa.me/17865271196?text=Hola%2C%20quiero%20m%C3%A1s%20info%20del%20programa%20IA%20en%2030%20D%C3%ADas%20Miami" class="btn-whatsapp">💬 ¿Dudas? Escríbenos por WhatsApp</a>
+        <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-top:12px; padding:8px 12px; background:rgba(29,158,117,0.1); border:1px solid rgba(29,158,117,0.3); border-radius:8px;">
+          <span style="font-size:14px;">🛡️</span>
+          <span style="font-size:12px; color:var(--teal-l); font-weight:600;">Garantía de 7 días · Si no te sirve, te devolvemos tu dinero</span>
+        </div>
         <p class="payment-note">Pago seguro vía Hotmart · Tarjeta, PayPal y más métodos</p>
       </div>
     </div>
@@ -1500,10 +1504,19 @@ setPrompt(0);
           { label: "💵 ¿Cuánto cuesta?", next: "precio" },
           { label: "📅 ¿Cuándo empieza?", next: "fecha" },
           { label: "📦 ¿Qué incluye?", next: "incluye" },
+          { label: "🛡️ ¿Hay garantía?", next: "garantia" },
           { label: "😬 Me parece caro", next: "obj_precio" },
           { label: "⏰ No tengo tiempo", next: "obj_horario" },
           { label: "🏢 ¿Sirve para mi área?", next: "obj_area" },
           { label: "🚀 Quiero registrarme", next: "cta" },
+        ]
+      },
+      garantia: {
+        msg: "Sí — tienes <strong>7 días de garantía</strong> desde tu compra. Si por cualquier razón sientes que no es para ti, te devolvemos tu dinero, sin vueltas. Cero riesgo para probarlo.",
+        options: [
+          { label: "💵 ¿Cuánto cuesta?", next: "precio" },
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "⬅ Ver más preguntas", next: "menu" },
         ]
       },
       precio: {

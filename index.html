@@ -773,6 +773,139 @@
       .footer-inner { grid-template-columns: 1fr 1fr; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     }
+
+    /* ── CHAT ASSISTANT WIDGET ── */
+    .chat-bubble {
+      position: fixed;
+      bottom: 92px;
+      right: 24px;
+      background: var(--violet);
+      color: white;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(83,74,183,0.5);
+      z-index: 999;
+      transition: transform 0.2s;
+      border: none;
+    }
+    .chat-bubble:hover { transform: scale(1.08); }
+    .chat-bubble .chat-dot {
+      position: absolute;
+      top: 2px; right: 2px;
+      width: 12px; height: 12px;
+      background: var(--teal);
+      border-radius: 50%;
+      border: 2px solid var(--navy);
+    }
+    .chat-panel {
+      display: none;
+      position: fixed;
+      bottom: 92px;
+      right: 24px;
+      width: 340px;
+      max-width: calc(100vw - 48px);
+      height: 460px;
+      max-height: calc(100vh - 140px);
+      background: var(--navy2);
+      border: 1px solid rgba(83,74,183,0.4);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+      z-index: 1000;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .chat-panel.open { display: flex; }
+    .chat-header {
+      background: linear-gradient(135deg, var(--violet), #3C3489);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .chat-header-info { display: flex; align-items: center; gap: 10px; }
+    .chat-avatar {
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; color: white;
+    }
+    .chat-title { font-size: 13px; font-weight: 700; color: white; margin: 0; }
+    .chat-status { font-size: 11px; color: var(--teal-l); margin: 0; }
+    .chat-close {
+      background: none; border: none; color: white;
+      font-size: 16px; cursor: pointer; opacity: 0.8;
+      width: 26px; height: 26px;
+    }
+    .chat-close:hover { opacity: 1; }
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .chat-msg {
+      font-size: 13px;
+      line-height: 1.6;
+      padding: 10px 13px;
+      border-radius: 12px;
+      max-width: 88%;
+    }
+    .chat-msg.bot {
+      background: rgba(83,74,183,0.18);
+      color: var(--gray1);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+    .chat-msg.user {
+      background: var(--violet);
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .chat-quick-replies {
+      padding: 10px 16px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .chat-qr-btn {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(83,74,183,0.4);
+      color: var(--violet-l);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .chat-qr-btn:hover {
+      background: rgba(83,74,183,0.25);
+      border-color: var(--violet-l);
+    }
+    .chat-qr-btn.cta {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 10px 12px;
+    }
+    .chat-qr-btn.cta:hover { background: #17845f; }
+    @media (max-width: 480px) {
+      .chat-panel { right: 12px; left: 12px; width: auto; }
+      .chat-bubble { right: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -1290,6 +1423,135 @@ setPrompt(0);
 
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/17865271196?text=Hola%2C%20quiero%20m%C3%A1s%20info%20del%20programa%20IA%20en%2030%20D%C3%ADas%20Miami" class="wa-float" target="_blank" title="WhatsApp">💬</a>
+
+
+  <!-- CHAT ASSISTANT WIDGET -->
+  <button class="chat-bubble" onclick="toggleChat()" aria-label="Abrir asistente">
+    💬<span class="chat-dot"></span>
+  </button>
+
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">L5</div>
+        <div>
+          <p class="chat-title">Asistente Learn5</p>
+          <p class="chat-status">● En línea</p>
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">¡Hola! 👋 Soy el asistente de Learn5. Preguntame lo que quieras sobre <strong>Domina la IA en 30 Días</strong>.</div>
+    </div>
+    <div class="chat-quick-replies" id="chatQuickReplies"></div>
+  </div>
+
+  <script>
+    const chatFAQ = {
+      start: {
+        options: [
+          { label: "💵 ¿Cuánto cuesta?", next: "precio" },
+          { label: "📅 ¿Cuándo empieza?", next: "fecha" },
+          { label: "📦 ¿Qué incluye?", next: "incluye" },
+          { label: "🎓 ¿Necesito experiencia?", next: "experiencia" },
+          { label: "💳 ¿Cómo pago?", next: "pago" },
+        ]
+      },
+      precio: {
+        msg: "El precio Early Bird es <strong>$96 USD</strong> (antes $129). Se activa cuando se completen 20 registros, y solo quedan cupos limitados antes de que suba a precio regular.",
+        options: [
+          { label: "📅 ¿Cuándo empieza?", next: "fecha" },
+          { label: "📦 ¿Qué incluye?", next: "incluye" },
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "⬅ Volver a preguntas", next: "start" },
+        ]
+      },
+      fecha: {
+        msg: "Arranca el <strong>17 de agosto</strong>. Son 4 semanas, con 1 sesión en vivo por semana (1.5h por Zoom) más el campus online disponible 24/7 entre sesiones.",
+        options: [
+          { label: "💵 ¿Cuánto cuesta?", next: "precio" },
+          { label: "📦 ¿Qué incluye?", next: "incluye" },
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "⬅ Volver a preguntas", next: "start" },
+        ]
+      },
+      incluye: {
+        msg: "✓ 4 sesiones virtuales en vivo por Zoom<br>✓ Campus online 24/7 por 30 días<br>✓ 30 herramientas de IA reales, 1 por día<br>✓ Certificado oficial de finalización<br>✓ Comunidad privada con soporte",
+        options: [
+          { label: "💵 ¿Cuánto cuesta?", next: "precio" },
+          { label: "🎓 ¿Necesito experiencia?", next: "experiencia" },
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "⬅ Volver a preguntas", next: "start" },
+        ]
+      },
+      experiencia: {
+        msg: "No, ninguna. El programa está diseñado para emprendedores, profesionales, docentes y dueños de negocio que parten desde cero. Vamos paso a paso, herramienta por herramienta.",
+        options: [
+          { label: "📦 ¿Qué incluye?", next: "incluye" },
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "⬅ Volver a preguntas", next: "start" },
+        ]
+      },
+      pago: {
+        msg: "Primero reservas tu cupo aquí en la web (sin pago inmediato). Nuestro equipo te envía tu código de descuento Early Bird por correo, y con ese código completas el pago en Hotmart.",
+        options: [
+          { label: "💵 ¿Cuánto cuesta?", next: "precio" },
+          { label: "🚀 Quiero registrarme", next: "cta" },
+          { label: "⬅ Volver a preguntas", next: "start" },
+        ]
+      },
+      cta: {
+        msg: "¡Perfecto! 🎉 Haz clic abajo para reservar tu cupo — toma menos de 1 minuto.",
+        options: [
+          { label: "🔗 Reservar mi cupo ahora", next: "REDIRECT", cta: true },
+          { label: "⬅ Volver a preguntas", next: "start" },
+        ]
+      }
+    };
+
+    function toggleChat() {
+      const panel = document.getElementById('chatPanel');
+      const isOpen = panel.classList.toggle('open');
+      if (isOpen && document.getElementById('chatQuickReplies').children.length === 0) {
+        renderChatStep('start');
+      }
+    }
+
+    function renderChatStep(stepKey) {
+      const step = chatFAQ[stepKey];
+      const messagesEl = document.getElementById('chatMessages');
+      const qrEl = document.getElementById('chatQuickReplies');
+
+      if (step.msg) {
+        const botMsg = document.createElement('div');
+        botMsg.className = 'chat-msg bot';
+        botMsg.innerHTML = step.msg;
+        messagesEl.appendChild(botMsg);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }
+
+      qrEl.innerHTML = '';
+      step.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'chat-qr-btn' + (opt.cta ? ' cta' : '');
+        btn.textContent = opt.label;
+        btn.onclick = () => {
+          if (opt.next === 'REDIRECT') {
+            window.open('https://tally.so/r/obYYGN', '_blank');
+            return;
+          }
+          const userMsg = document.createElement('div');
+          userMsg.className = 'chat-msg user';
+          userMsg.textContent = opt.label;
+          messagesEl.appendChild(userMsg);
+          messagesEl.scrollTop = messagesEl.scrollHeight;
+          setTimeout(() => renderChatStep(opt.next), 300);
+        };
+        qrEl.appendChild(btn);
+      });
+    }
+  </script>
 
 </body>
 </html>

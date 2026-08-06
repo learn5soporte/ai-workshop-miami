@@ -411,6 +411,43 @@
       border-bottom: 1px solid rgba(255,255,255,0.05);
     }
     .week-card ul li:last-child { border-bottom: none; }
+
+    .week-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .week-tool-chip {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 56px;
+      text-align: center;
+    }
+    .week-tool-chip .wt-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+      border: 1.5px solid rgba(160,148,255,0.4);
+      margin-bottom: 4px;
+    }
+    .week-tool-chip .wt-name {
+      font-size: 9.5px;
+      font-weight: 600;
+      color: var(--gray3);
+      line-height: 1.15;
+    }
+    .week-tool-chip:nth-child(4n+1) .wt-icon { border-color: rgba(83,74,183,0.7); background: linear-gradient(135deg, rgba(83,74,183,0.3), rgba(83,74,183,0.05)); }
+    .week-tool-chip:nth-child(4n+2) .wt-icon { border-color: rgba(29,158,117,0.7); background: linear-gradient(135deg, rgba(29,158,117,0.3), rgba(29,158,117,0.05)); }
+    .week-tool-chip:nth-child(4n+3) .wt-icon { border-color: rgba(212,175,55,0.7); background: linear-gradient(135deg, rgba(212,175,55,0.3), rgba(212,175,55,0.05)); }
+    .week-tool-chip:nth-child(4n+4) .wt-icon { border-color: rgba(62,143,255,0.7); background: linear-gradient(135deg, rgba(62,143,255,0.3), rgba(62,143,255,0.05)); }
+
     .tools-line {
       margin-top: 12px;
       font-size: 11px;
@@ -1371,7 +1408,15 @@ setPrompt(0);
             <li>Prompting práctico: cómo obtener resultados reales</li>
             <li>Reto: construye el asistente virtual de tu negocio en 1 hora</li>
           </ul>
-          <p class="tools-line">Herramientas: ChatGPT · Claude · Gemini · Perplexity · Copilot · NotebookLM</p>
+          <div class="week-tools">
+            <div class="week-tool-chip"><span class="wt-icon">🤖</span><span class="wt-name">ChatGPT</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">✨</span><span class="wt-name">Claude</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🔮</span><span class="wt-name">Gemini</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🔍</span><span class="wt-name">Perplexity</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🪟</span><span class="wt-name">Copilot</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">📓</span><span class="wt-name">NotebookLM</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">📝</span><span class="wt-name">Otter.ai</span></div>
+          </div>
         </div>
         <div class="week-card">
           <p class="week-num">Semana 2 · Sesión virtual en vivo · 1.5 h</p>
@@ -1381,7 +1426,16 @@ setPrompt(0);
             <li>Diseño sin ser diseñador: Canva AI y generadores</li>
             <li>Reto: crea una pieza de contenido completa en 30 min</li>
           </ul>
-          <p class="tools-line">Herramientas: Canva AI · Leonardo · ElevenLabs · HeyGen · CapCut AI · Runway</p>
+          <div class="week-tools">
+            <div class="week-tool-chip"><span class="wt-icon">🎨</span><span class="wt-name">Canva AI</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🖼️</span><span class="wt-name">Leonardo AI</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🎙️</span><span class="wt-name">ElevenLabs</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🎬</span><span class="wt-name">HeyGen</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">✂️</span><span class="wt-name">CapCut AI</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🎥</span><span class="wt-name">Runway</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🔊</span><span class="wt-name">Suno AI</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">📈</span><span class="wt-name">AdCreative</span></div>
+          </div>
         </div>
         <div class="week-card">
           <p class="week-num">Semana 3 · Sesión virtual en vivo · 1.5 h</p>
@@ -1391,7 +1445,15 @@ setPrompt(0);
             <li>Automatización de tareas repetitivas</li>
             <li>Reto: automatiza una tarea que haces cada semana</li>
           </ul>
-          <p class="tools-line">Herramientas: Make · Zapier · Notion AI · Typebot · n8n · Gamma</p>
+          <div class="week-tools">
+            <div class="week-tool-chip"><span class="wt-icon">⚙️</span><span class="wt-name">Make</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">⚡</span><span class="wt-name">Zapier</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">📋</span><span class="wt-name">Notion AI</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">💬</span><span class="wt-name">Typebot</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🔀</span><span class="wt-name">n8n</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">📊</span><span class="wt-name">Gamma</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🗃️</span><span class="wt-name">Airtable AI</span></div>
+          </div>
         </div>
         <div class="week-card">
           <p class="week-num">Semana 4 · Sesión virtual en vivo · 1.5 h</p>
@@ -1401,7 +1463,16 @@ setPrompt(0);
             <li>Graduación: define tu stack de IA y plan de implementación</li>
             <li>Reto final: 5 herramientas que van a cambiar tu semana</li>
           </ul>
-          <p class="tools-line">Herramientas: Custom GPTs · Claude Projects · Dify · Voiceflow · Beautiful.ai</p>
+          <div class="week-tools">
+            <div class="week-tool-chip"><span class="wt-icon">🧠</span><span class="wt-name">Custom GPTs</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">📁</span><span class="wt-name">Claude Projects</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🤝</span><span class="wt-name">Dify</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🗣️</span><span class="wt-name">Voiceflow</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">📐</span><span class="wt-name">Beautiful.ai</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">📩</span><span class="wt-name">Instantly AI</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🌐</span><span class="wt-name">Durable</span></div>
+            <div class="week-tool-chip"><span class="wt-icon">🛍️</span><span class="wt-name">Shopify AI</span></div>
+          </div>
         </div>
       </div>
     </div>

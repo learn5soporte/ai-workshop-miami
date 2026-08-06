@@ -910,9 +910,66 @@
       .chat-panel { right: 12px; left: 12px; width: auto; }
       .chat-bubble { right: 16px; }
     }
+
+    /* ── FLOATING PARTICLES BACKGROUND ── */
+    .particles-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      animation-name: particleFloat, particleTwinkle;
+      animation-timing-function: linear, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+    }
+    @keyframes particleFloat {
+      0% { transform: translateY(0) translateX(0); }
+      100% { transform: translateY(-100vh) translateX(var(--drift, 20px)); }
+    }
+    @keyframes particleTwinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: var(--max-opacity, 0.7); }
+    }
   </style>
 </head>
 <body>
+
+  <div class="particles-bg" id="particlesBg"></div>
+  <script>
+    (function() {
+      const container = document.getElementById('particlesBg');
+      const colors = ['#FFFFFF', '#9FE1CB', '#AFA9EC', '#D4AF37'];
+      const count = 50;
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = (Math.random() * 3 + 1.5).toFixed(1);
+        const left = (Math.random() * 100).toFixed(2);
+        const top = (Math.random() * 100).toFixed(2);
+        const duration = (Math.random() * 15 + 12).toFixed(1);
+        const delay = (Math.random() * 12).toFixed(1);
+        const drift = (Math.random() * 60 - 30).toFixed(0) + 'px';
+        const maxOpacity = (Math.random() * 0.5 + 0.3).toFixed(2);
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = left + '%';
+        p.style.top = top + '%';
+        p.style.background = color;
+        p.style.setProperty('--drift', drift);
+        p.style.setProperty('--max-opacity', maxOpacity);
+        p.style.animationDuration = duration + 's, ' + (duration * 0.6).toFixed(1) + 's';
+        p.style.animationDelay = delay + 's, ' + delay + 's';
+        container.appendChild(p);
+      }
+    })();
+  </script>
+
 
   <!-- BANNER -->
   <div class="banner">

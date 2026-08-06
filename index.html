@@ -911,7 +911,7 @@
       .chat-bubble { right: 16px; }
     }
 
-    /* ── FLOATING PARTICLES BACKGROUND ── */
+    /* ── STARRY SKY BACKGROUND ── */
     .particles-bg {
       position: fixed;
       inset: 0;
@@ -922,17 +922,12 @@
     .particle {
       position: absolute;
       border-radius: 50%;
+      background: #FFFFFF;
       opacity: 0;
-      animation-name: particleFloat, particleTwinkle;
-      animation-timing-function: linear, ease-in-out;
-      animation-iteration-count: infinite, infinite;
+      animation: starTwinkle ease-in-out infinite;
     }
-    @keyframes particleFloat {
-      0% { transform: translateY(0) translateX(0); }
-      100% { transform: translateY(-100vh) translateX(var(--drift, 20px)); }
-    }
-    @keyframes particleTwinkle {
-      0%, 100% { opacity: 0; }
+    @keyframes starTwinkle {
+      0%, 100% { opacity: var(--min-opacity, 0.1); }
       50% { opacity: var(--max-opacity, 0.7); }
     }
   </style>
@@ -943,28 +938,34 @@
   <script>
     (function() {
       const container = document.getElementById('particlesBg');
-      const colors = ['#FFFFFF', '#9FE1CB', '#AFA9EC', '#D4AF37'];
-      const count = 50;
+      // Tonos tipo estrella: blanco puro, blanco calido y un toque azulado
+      const colors = ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#E8F0FF', '#FFF8E8'];
+      const count = 90;
       for (let i = 0; i < count; i++) {
         const p = document.createElement('div');
         p.className = 'particle';
-        const size = (Math.random() * 3 + 1.5).toFixed(1);
+        // Mayoria estrellas chiquitas, pocas mas grandes/brillantes (profundidad)
+        const isBright = Math.random() < 0.15;
+        const size = isBright ? (Math.random() * 1.5 + 2.5).toFixed(1) : (Math.random() * 1.2 + 0.8).toFixed(1);
         const left = (Math.random() * 100).toFixed(2);
         const top = (Math.random() * 100).toFixed(2);
-        const duration = (Math.random() * 15 + 12).toFixed(1);
-        const delay = (Math.random() * 12).toFixed(1);
-        const drift = (Math.random() * 60 - 30).toFixed(0) + 'px';
-        const maxOpacity = (Math.random() * 0.5 + 0.3).toFixed(2);
+        const duration = (Math.random() * 4 + 3).toFixed(1);
+        const delay = (Math.random() * 6).toFixed(1);
+        const maxOpacity = isBright ? (Math.random() * 0.3 + 0.6).toFixed(2) : (Math.random() * 0.35 + 0.25).toFixed(2);
+        const minOpacity = (maxOpacity * 0.15).toFixed(2);
         const color = colors[Math.floor(Math.random() * colors.length)];
         p.style.width = size + 'px';
         p.style.height = size + 'px';
         p.style.left = left + '%';
         p.style.top = top + '%';
         p.style.background = color;
-        p.style.setProperty('--drift', drift);
+        if (isBright) {
+          p.style.boxShadow = '0 0 ' + (size * 2) + 'px rgba(255,255,255,0.5)';
+        }
         p.style.setProperty('--max-opacity', maxOpacity);
-        p.style.animationDuration = duration + 's, ' + (duration * 0.6).toFixed(1) + 's';
-        p.style.animationDelay = delay + 's, ' + delay + 's';
+        p.style.setProperty('--min-opacity', minOpacity);
+        p.style.animationDuration = duration + 's';
+        p.style.animationDelay = delay + 's';
         container.appendChild(p);
       }
     })();

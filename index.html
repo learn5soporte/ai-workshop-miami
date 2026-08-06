@@ -911,6 +911,52 @@
       .chat-bubble { right: 16px; }
     }
 
+
+    /* ── AURORA MESH GRADIENT BACKGROUND ── */
+    .aurora-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .aurora-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      will-change: transform;
+    }
+    .aurora-blob.violet {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(83,74,183,0.55), transparent 70%);
+      top: -15%; left: -15%;
+      animation: auroraDrift1 38s ease-in-out infinite alternate;
+    }
+    .aurora-blob.teal {
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(29,158,117,0.45), transparent 70%);
+      bottom: -15%; right: -10%;
+      animation: auroraDrift2 45s ease-in-out infinite alternate;
+    }
+    .aurora-blob.gold {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(212,175,55,0.3), transparent 70%);
+      top: 38%; left: 42%;
+      animation: auroraDrift3 52s ease-in-out infinite alternate;
+    }
+    @keyframes auroraDrift1 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(140px, 200px) scale(1.15); }
+    }
+    @keyframes auroraDrift2 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-160px, -120px) scale(1.1); }
+    }
+    @keyframes auroraDrift3 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(90px, -140px) scale(1.2); }
+    }
+
     /* ── STARRY SKY BACKGROUND ── */
     .particles-bg {
       position: fixed;
@@ -934,6 +980,11 @@
 </head>
 <body>
 
+  <div class="aurora-bg">
+    <div class="aurora-blob violet"></div>
+    <div class="aurora-blob teal"></div>
+    <div class="aurora-blob gold"></div>
+  </div>
   <div class="particles-bg" id="particlesBg"></div>
   <script>
     (function() {
